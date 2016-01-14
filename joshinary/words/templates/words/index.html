@@ -40,16 +40,15 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="#">Joshinary</a>
+					<a class="navbar-brand" href="#"><img src="static/assets/img/JoshinaryLogo.png" height="20px"></a>
 				</div>
 				<!-- /.navbar-header -->
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="#">Word of the day</a></li>
-						<li><a href="#">Submit</a></li>
-						<li><a href="#">Browse</a></li>
+						<li class="navBarWords"><a href="#">Browse</a></li>
+						<li class="navBarWords"><a href="#">Home</a></li>
 					</ul>
 
 				</div>
@@ -63,35 +62,75 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-sm-12">
-					<div class="page-header">
-						<h1>This is something</h1>
-						<p>Posted by <span class="glyphicon glyphicon-user"></span> <a href="#">Ben Gansekoele</a> on <span class="glyphicon glyphicon-time"></span> 12 January 2015 10:00 am</p>
+					<div class="">
+						<div style="">
+							<div class="well">
+								<form action="#">
+									<div class="input-group">
+										<label class="sr-only" for="search-form">Search the site</label>
+										<input type="text" class="form-control" placeholder="Search" id="search-form">
+										<span class="input-group-btn">
+											<button class="btn btn-default" type="button">
+												<span class="glyphicon glyphicon-search"></span>
+												<span class="sr-only">Search</span>
+											</button>
+										</span>
+									</div>
+								</form>
+							</div>
+					</div>
 					</div>
 				</div>
+			</div>
+			<div style="text-align:center">
+			  <ul class="pagination">
+			    <li><a href="#">A</a></li>
+			    <li><a href="#">B</a></li>
+			    <li><a href="#">C</a></li>
+			    <li><a href="#">D</a></li>
+			    <li><a href="#">E</a></li>
+					<li><a href="#">F</a></li>
+			    <li><a href="#">G</a></li>
+			    <li><a href="#">H</a></li>
+			    <li><a href="#">I</a></li>
+					<li><a href="#">J</a></li>
+					<li><a href="#">K</a></li>
+					<li><a href="#">L</a></li>
+					<li><a href="#">M</a></li>
+					<li><a href="#">N</a></li>
+					<li><a href="#">O</a></li>
+					<li><a href="#">P</a></li>
+					<li><a href="#">Q</a></li>
+					<li><a href="#">R</a></li>
+					<li><a href="#">S</a></li>
+					<li><a href="#">T</a></li>
+					<li><a href="#">U</a></li>
+					<li><a href="#">V</a></li>
+					<li><a href="#">W</a></li>
+					<li><a href="#">X</a></li>
+					<li><a href="#">Y</a></li>
+			    <li><a href="#">Z</a></li>
+			  </ul>
 			</div>
 			<!-- /.row -->
 
 			<div class="row">
 				<div class="col-sm-8">
 
-					<!-- Image -->
-					<figure class="margin-b-2">
-						<img class="img-responsive" src="http://www.localmatters.co.nz/ic/2462206892/Llama.jpg" alt="">
-						<figcaption class="margin-t-h">Here in my garage</figcaption>
-					</figure>
+
 					<h2>
-						<h3>Latest Words</h3>
+
 						{% if latest_word_list %}
 								<ul>
 								{% for word in latest_word_list %}
 								<!-- Words -->
 
 						<div class="well">
-							<a href="{% url 'words:detail' word.id %}">
+
 							<div class="media">
 								<div class="media-body">
-									<h4 class="margin-t-0">{{ word.word }}</a></h4>
-	<!--FontWord and fontWordBody in style.css-->
+									<h4 class="margin-t-0"><a href="{% url 'words:detail' word.id %}">{{ word.word }}</a></h4>
+									<!--FontWord and fontWordBody in style.css-->
 									<p class="fontWord" >{{ word.short_definition }}</p>
 									<p class="fontWordBody">{{ word.long_definition }}</p>
 									<p>
@@ -106,7 +145,6 @@
 										</button>
 									</p>
 								</div>
-							</a>
 							</div>
 						</div>
 					{% endfor %}
@@ -124,24 +162,7 @@
 					</nav>
 
 				</div>
-				<div class="col-sm-4">
-					<!-- Search -->
-					<div class="well">
-						<h4 class="margin-t-0">Search</h4>
-						<form action="#">
-							<div class="input-group">
-								<label class="sr-only" for="search-form">Search the site</label>
-								<input type="text" class="form-control" id="search-form">
-								<span class="input-group-btn">
-									<button class="btn btn-default" type="button">
-										<span class="glyphicon glyphicon-search"></span>
-										<span class="sr-only">Search</span>
-									</button>
-								</span>
-							</div>
-						</form>
-					</div>
-
+				<div class="col-sm-4" style="Padding-top: 20px;">
 					<!-- list group -->
 					<div class="list-group margin-b-3">
 					    <a href="#" class="active list-group-item">Top</a>
@@ -158,17 +179,6 @@
 							<p>This is a bunch of words</p>
 						</div>
 					</div>
-
-					<!-- Panel -->
-					<div class="panel panel-default">
-						<div class="panel-heading">
-							<h4 class="panel-title">Sidebar panel widget</h4>
-						</div>
-						<div class="panel-body">
-							<p>This is a bunch of words</p>
-						</div>
-					</div>
-
 				</div>
 			</div>
 			<!-- /.row -->

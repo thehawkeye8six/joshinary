@@ -36,6 +36,7 @@ body { padding-top: 70px; }
  * be used sparingly.
 */
 .fontWord {font-size: 19px;}
+.navBarWords {font-size: 19px;}
 .fontWordBody {font-size: 18px;}
 .margin-t-0 { margin-top: 0; }
 .margin-t-h { margin-top: .5em; }
