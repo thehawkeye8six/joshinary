@@ -17,12 +17,12 @@ body { padding-top: 70px; }
 
 
 /**
- * Bootstrap requires a containing element to wrap site contents 
+ * Bootstrap requires a containing element to wrap site contents
  * and house the grid system. You may choose one of two containers.
  * Use .container for a responsive fixed width container.
  * Use .container-fluid for a full width container.
 
- * If using container-fluid, you may need to set a maximum width, 
+ * If using container-fluid, you may need to set a maximum width,
  * so that the container will not spread to the entire viewport.
 */
 
@@ -35,7 +35,8 @@ body { padding-top: 70px; }
  * help aspects of the layout. These helper classes should only
  * be used sparingly.
 */
-
+.fontWord {font-size: 19px;}
+.fontWordBody {font-size: 18px;}
 .margin-t-0 { margin-top: 0; }
 .margin-t-h { margin-top: .5em; }
 .margin-t-1 { margin-top: 1em; }

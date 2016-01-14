@@ -84,7 +84,33 @@
 							{% if latest_word_list %}
 									<ul>
 									{% for word in latest_word_list %}
-											<li><a href="{% url 'words:detail' word.id %}">{{ word.word }}</a></li>
+									<!-- Words -->
+					<h3>Words</h3>
+					<div class="well">
+						<div class="media">
+							<div class="media-left">
+								<img src="http://www.qsl.net/kb7tbt/t.gif" alt="">
+							</div>
+							<div class="media-body">
+								<h4 class="margin-t-0"><a href="{% url 'words:detail' word.id %}">{{ word.word }}</a></h4>
+<!--FontWord and fontWordBody in style.css-->
+								<p><a class="fontWord" href="{% url 'words:detail' word.id %}">{{ word.short_definition }}</a></p>
+								<p><a class="fontWordBody" href="{% url 'words:detail' word.id %}">{{ word.long_definition }}</a></p>
+								<p>
+									<button class="btn btn-sm btn-default">
+										<span class="glyphicon glyphicon-thumbs-up"></span> Upvote
+									</button>
+									<button class="btn btn-sm btn-default">
+										<span class="glyphicon glyphicon-thumbs-down"></span> Downvote
+									</button>
+									<button class="btn btn-sm btn-default">
+										<span class="glyphicon glyphicon-comment"></span> Reply
+									</button>
+								</p>
+							</div>
+						</div>
+					</div>
+
 									{% endfor %}
 									</ul>
 							{% else %}

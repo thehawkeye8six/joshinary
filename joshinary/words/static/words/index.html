@@ -13,7 +13,7 @@
      <!-- Custom styles for this template -->
 
      <link rel="stylesheet" type="text/css" href="{% static "assets/css/main.css" %}" />
-                                                
+
 
    <body>
 
@@ -29,7 +29,7 @@
       </div>
       <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-left">
-          <li<h2 style="font-size:40px">Joshinary</h2></li>
+          <li<h2 style="font-size:40px">Jodshinary</h2></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           <li class="active"><a href="index.html">HOME</a></li>
@@ -46,7 +46,8 @@
         {% if latest_word_list %}
             <ul>
             {% for word in latest_word_list %}
-                <li><a href="{% url 'words:detail' word.id %}">{{ word.word }}</a></li>
+            <li><a href="{% url 'words:detail' word.id %}">{{ word.word }}</a></li>
+                <p>this should be something</p>
             {% endfor %}
             </ul>
         {% else %}
