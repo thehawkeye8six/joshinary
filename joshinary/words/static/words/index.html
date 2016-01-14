@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+ <html lang="en">
+   <head>
+     <meta charset="utf-8">
+
+     <title>Joshinary</title>
+
+     <!-- Bootstrap core CSS -->
+     <link href="assets/css/bootstrap.css" rel="stylesheet">
+     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+
+     <!-- Custom styles for this template -->
+
+     <link rel="stylesheet" type="text/css" href="{% static "assets/css/main.css" %}" />
+                                                
+
+   <body>
+
+  <!-- Fixed navbar -->
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li<h2 style="font-size:40px">Joshinary</h2></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="active"><a href="index.html">HOME</a></li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+ 	<!-- FEATURE SECTION -->
+ 	<div class="container wb">
+ 		<div class="row centered">
+ 			<div class="col-lg-8 col-lg-offset-2">
+    <p>
+        {% if latest_word_list %}
+            <ul>
+            {% for word in latest_word_list %}
+                <li><a href="{% url 'words:detail' word.id %}">{{ word.word }}</a></li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p>No words are available.</p>
+        {% endif %}
+       </p>
+ 			</div>
+ 			<div class="col-lg-2"></div>
+ 		</div><!-- row -->
+ 	</div><!-- container -->
+
+ 	<!-- FOOTER -->
+ 	<div id="f">
+ 		<div class="container">
+ 			<div class="row centered">
+ 			<p style="color:white"> Footer stuff</p>
+
+ 			</div><!-- row -->
+ 		</div><!-- container -->
+ 	</div><!-- Footer -->
+
+
+
+     <!-- Bootstrap core JavaScript
+     ================================================== -->
+     <!-- Placed at the end of the document so the pages load faster -->
+     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+     <script src="assets/js/bootstrap.min.js"></script>
+   </body>
+ </html>

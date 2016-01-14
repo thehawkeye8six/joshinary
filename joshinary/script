@@ -1,0 +1,10 @@
+DROP DATABASE IF EXISTS joshinary;
+CREATE DATABASE joshinary
+    DEFAULT CHARACTER SET utf8
+    DEFAULT COLLATE utf8_general_ci;
+
+USE joshinary;
+GRANT ALL PRIVILEGES ON joshinary.* TO 'benj'@'localhost' IDENTIFIED BY 'password'
+
+WITH GRANT OPTION;
+FLUSH PRIVILEGES;
