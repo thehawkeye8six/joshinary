@@ -69,7 +69,6 @@
 					</div>
 				</div>
 			</div>
-
 			<!-- /.row -->
 
 			<div class="row">
@@ -81,132 +80,41 @@
 						<figcaption class="margin-t-h">Here in my garage</figcaption>
 					</figure>
 					<h2>
-							{% if latest_word_list %}
-									<ul>
-									{% for word in latest_word_list %}
-									<!-- Words -->
-					<h3>Words</h3>
-					<div class="well">
-						<div class="media">
-							<div class="media-left">
-								<img src="http://www.qsl.net/kb7tbt/t.gif" alt="">
-							</div>
-							<div class="media-body">
-								<h4 class="margin-t-0"><a href="{% url 'words:detail' word.id %}">{{ word.word }}</a></h4>
-<!--FontWord and fontWordBody in style.css-->
-								<p><a class="fontWord" href="{% url 'words:detail' word.id %}">{{ word.short_definition }}</a></p>
-								<p><a class="fontWordBody" href="{% url 'words:detail' word.id %}">{{ word.long_definition }}</a></p>
-								<p>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-up"></span> Upvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-down"></span> Downvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-comment"></span> Reply
-									</button>
-								</p>
+						<h3>Latest Words</h3>
+						{% if latest_word_list %}
+								<ul>
+								{% for word in latest_word_list %}
+								<!-- Words -->
+
+						<div class="well">
+							<a href="{% url 'words:detail' word.id %}">
+							<div class="media">
+								<div class="media-body">
+									<h4 class="margin-t-0">{{ word.word }}</a></h4>
+	<!--FontWord and fontWordBody in style.css-->
+									<p class="fontWord" >{{ word.short_definition }}</p>
+									<p class="fontWordBody">{{ word.long_definition }}</p>
+									<p>
+										<button class="btn btn-sm btn-default">
+											<span class="glyphicon glyphicon-thumbs-up"></span> Upvote
+										</button>
+										<button class="btn btn-sm btn-default">
+											<span class="glyphicon glyphicon-thumbs-down"></span> Downvote
+										</button>
+										<button class="btn btn-sm btn-default">
+											<span class="glyphicon glyphicon-comment"></span> Reply
+										</button>
+									</p>
+								</div>
+							</a>
 							</div>
 						</div>
-					</div>
-
-									{% endfor %}
-									</ul>
-							{% else %}
-									<p>No words are available.</p>
-							{% endif %}
-            </h2>
-
-					<!-- Comments -->
-					<h3>Comments</h3>
-					<div class="well">
-						<div class="media">
-							<div class="media-left">
-								<img src="http://placehold.it/70x70" alt="">
-							</div>
-							<div class="media-body">
-								<h4 class="margin-t-0"><a href="#">This is a user name</a></h4>
-								<p><a href="#">12 January 2015 11:13 pm</a></p>
-								<p>This is a comment</p>
-								<p>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-up"></span> Upvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-down"></span> Downvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-comment"></span> Reply
-									</button>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="well">
-						<div class="media">
-							<div class="media-left">
-								<img src="http://placehold.it/70x70" alt="">
-							</div>
-							<div class="media-body">
-								<h4 class="margin-t-0"><a href="#">This is a user name</a></h4>
-								<p><a href="#">12 January 2015 11:13 pm</a></p>
-								<p>This is a comment</p>
-								<p>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-up"></span> Upvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-down"></span> Downvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-comment"></span> Reply
-									</button>
-								</p>
-							</div>
-						</div>
-					</div>
-
-					<div class="well">
-						<div class="media">
-							<div class="media-left">
-								<img src="http://placehold.it/70x70" alt="">
-							</div>
-							<div class="media-body">
-								<h4 class="margin-t-0"><a href="#">This is a user name</a></h4>
-								<p><a href="#">12 January 2015 11:13 pm</a></p>
-								<p>This is a comment</p>
-								<p>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-up"></span> Upvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-thumbs-down"></span> Downvote
-									</button>
-									<button class="btn btn-sm btn-default">
-										<span class="glyphicon glyphicon-comment"></span> Reply
-									</button>
-								</p>
-							</div>
-						</div>
-					</div>
-					<hr>
-
-					<!-- Comment form -->
-					<h3>Leave a comment</h3>
-
-					<div class="well">
-						<form>
-							<div class="form-group">
-								<label for="contactComment">Comment</label>
-								<textarea class="form-control" id="contactComment"></textarea>
-							</div>
-							<button type="submit" class="btn btn-default">Submit</button>
-						</form>
-					</div>
-					<hr>
-
+					{% endfor %}
+					</ul>
+			{% else %}
+					<p>No words are available.</p>
+			{% endif %}
+	  </h2>
 					<!-- Pager -->
 					<nav>
 						<ul class="pager">
